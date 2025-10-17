@@ -27,16 +27,16 @@ public:
 
 	/// Конструктор копирования
 	/// other - другое бинарное дерево поиска
-	BinaryTree(const BinaryTree& other)
+	Binary_Tree(const Binary_Tree& other)
 	{
-		root = copyNodes(other.root);
+		root = copy_tree(other.root);
 	}
 
 	/// Оператор присваивания копированием
 	/// other - другое бинарное дерево поиска
-	BinaryTree& operator=(const BinaryTree& other)
+	Binary_Tree& operator=(const Binary_Tree& other)
 	{
-		return BinaryTree(other);
+		return Binary_Tree(other);
 	}
 
 	/// Вставка в дерево
@@ -52,7 +52,7 @@ public:
 	/// Сложность: O(n) - несбалансированное, O(log n) - сбалансированное
 	/// Бросаем исключение если 
 	/// T data - данные узла
-	void remove(T data)
+	void removeNode(T data)
 	{
 		try
 		{
@@ -165,7 +165,7 @@ public:
 	 
 	void stack_nlr(vector<T>& arr)
 	{
-		Stack_NLR(root);
+		Stack_NLR(root, arr);
 	}
 
 	/// Деструктор

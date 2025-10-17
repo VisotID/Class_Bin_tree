@@ -256,11 +256,11 @@ void test()
 	arr.clear();
 
 	/// “есты проверки метода удалени€ узла из дерева
-	root.remove(1);
-	top.remove(5);
-	top_2.remove(9);
-	top_3.remove(1);
-	top_4.remove(5);
+	root.removeNode(1);
+	top.removeNode(5);
+	top_2.removeNode(9);
+	top_3.removeNode(1);
+	top_4.removeNode(5);
 	assert(root.Size() == 0);
 	assert(top.Size() == 3);
 	assert(top_2.Size() == 0);
