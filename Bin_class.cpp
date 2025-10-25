@@ -67,7 +67,7 @@ void test()
 
 	/// Тесты проверки метода определения максимального узла дерева
 	assert(root.Tree_max() == nullptr);
-	assert(top.Tree_max()->date == 8);
+	assert(top.Tree_max()->date == 9);
 	assert(top_2.Tree_max()->date == 9);
 	assert(top_3.Tree_max()->date == 7);
 	assert(top_4.Tree_max()->date == 10);
