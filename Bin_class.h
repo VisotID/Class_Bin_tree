@@ -22,7 +22,7 @@ public:
 		/// »звлечение следующего элемента из стека
 		void next()
 		{
-			if (nodes.empty())
+			if (nodes.empty()) // если стек пустой
 			{
 				curr = nullptr;
 				return;
@@ -40,11 +40,12 @@ public:
 
 	public:
 
-		///  онструктор итератораа
+		///  онструктор итератора
 		/// Tree_Node<T>* root - корень дерева
 		/// ≈сли корень не пустой, стек заполн€етс€ всеми левыми потомками до последнего уровн€
-		Iterator(Tree_Node<T>* root = nullptr) : curr(nullptr)
+		Iterator(Tree_Node<T>* root = nullptr)
 		{
+			curr = nullptr;
 			push_left(root);
 			next();
 		}
@@ -77,7 +78,7 @@ public:
 			{
 				throw out_of_range("Ёлемент не существует");
 			}
-			return curr->data;
+			return curr->date;
 		}
 
 		/// ќператор сравнени€
@@ -92,6 +93,16 @@ public:
 				return true;
 			}
 			return this->curr != it->curr;
+		}
+
+		/// ќператор сравнени€
+		/// »спользуетс€, чтобы проверить, указывают ли два итератора на разные элементы
+		/// const Iterator_abstr<T>& other - другой итератор дл€ сравнени€
+		/// ¬озвращает true, если итераторы указывают на один и тот же узел, false, если они указывают на разные узлы
+		bool operator==(const Iterator_abstr<T>& other) const
+		{
+			const Iterator* it = dynamic_cast<const Iterator*>(&other); // пробуем привести ссылку к типу Iterator*
+			return this->curr == it->curr;
 		}
 	};
 
